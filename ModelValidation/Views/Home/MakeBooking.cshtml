@@ -1,0 +1,20 @@
+﻿@model Appointment
+@{ Layout = "_Layout"; }
+
+<div class="bg-primary m-1 p-1 text-white"><h2>Book an Appointment</h2></div>
+<form class="m-1 p-1" asp-action="MakeBooking" method="post">
+        <div class="form-group">   
+            <label asp-for="ClientName">Your name:</label>  
+            <input asp-for="ClientName" class="form-control" />  
+        </div>   
+        <div class="form-group">   
+            <label asp-for="Date">Appointment Date:</label>  
+            <input asp-for="Date" type="text" asp-format="{0:d}" class="form-control" />
+        </div>   
+        <div class="radio form-group">   
+            <input asp-for="TermsAccepted" />   
+            <label asp-for="TermsAccepted" class="form-check-label"> I accept the terms & conditions </label> 
+        </div>   
+    <button type="submit" class="btn btn-primary">Make Booking</button>
+ </form>
+
